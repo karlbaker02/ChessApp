@@ -1,4 +1,7 @@
-﻿namespace ChessApp
+﻿
+using System;
+
+namespace ChessApp
 {
     public class Board
     {
@@ -8,6 +11,9 @@
 
         public void AddPiece(Pawn piece, BoardCoordinate moveCoordinate)
         {
+            if (!moveCoordinate.IsCoordinateValidForBoardSize(Boardsize))
+                throw new ArgumentException("moveTarget");
+
             _pieces[moveCoordinate.X, moveCoordinate.Y] = piece;
         }
 
@@ -15,5 +21,7 @@
         {
             return _pieces[coordinates.X, coordinates.Y];
         }
+
+
     }
 }

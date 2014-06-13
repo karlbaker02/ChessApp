@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace ChessApp.Test
 {
@@ -35,6 +36,38 @@ namespace ChessApp.Test
             public void Does_Not_Throw_Exception_When_Adding_A_Piece_To_An_Unoccupied_Square()
             {
                 Target.AddPiece(new Pawn(), new BoardCoordinate(2, 1));
+            }
+
+            [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
+            public void Throws_Exception_When_BoardCoordinate_Has_Larger_X_Value_Than_Board_Size()
+            {
+                var coordinate = new BoardCoordinate(9, 1);
+
+                ExtendedAssert.Throws<ArgumentException>(() => Target.AddPiece(Piece, coordinate));
+            }
+
+            [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
+            public void Throws_Exception_When_BoardCoordinate_Has_Larger_Y_Value_Than_Board_Size()
+            {
+                var coordinate = new BoardCoordinate(1, 9);
+
+                ExtendedAssert.Throws<ArgumentException>(() => Target.AddPiece(Piece, coordinate));
+            }
+
+            [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
+            public void Throws_Exception_When_BoardCoordinate_Has_Zero_X_Value()
+            {
+                var coordinate = new BoardCoordinate(0, 1);
+
+                ExtendedAssert.Throws<ArgumentException>(() => Target.AddPiece(Piece, coordinate));
+            }
+
+            [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
+            public void Throws_Exception_When_BoardCoordinate_Has_Zero_Y_Value()
+            {
+                var coordinate = new BoardCoordinate(1, 0);
+
+                ExtendedAssert.Throws<ArgumentException>(() => Target.AddPiece(Piece, coordinate));
             }
         }
     }
