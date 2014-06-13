@@ -1,0 +1,7 @@
+C:\Projects\ChessApp\ChessApp.Test\obj\Debug\ChessApp.Test.csprojResolveAssemblyReference.cache
+C:\Projects\ChessApp\ChessApp.Test\bin\Debug\ChessApp.Test.dll
+C:\Projects\ChessApp\ChessApp.Test\bin\Debug\ChessApp.Test.pdb
+C:\Projects\ChessApp\ChessApp.Test\bin\Debug\ChessApp.exe
+C:\Projects\ChessApp\ChessApp.Test\bin\Debug\ChessApp.pdb
+C:\Projects\ChessApp\ChessApp.Test\obj\Debug\ChessApp.Test.dll
+C:\Projects\ChessApp\ChessApp.Test\obj\Debug\ChessApp.Test.pdb
