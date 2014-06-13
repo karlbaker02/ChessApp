@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+using System.Linq;
 
 namespace ChessApp.Test
 {
@@ -10,14 +10,13 @@ namespace ChessApp.Test
         public class GetsMoveFrom
         {
             [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
-            public void Returns_2_3_When_Passed_2_2()
+            public void Returns_2_3_As_One_Result_When_Passed_2_2()
             {
                 var pawn = new Pawn();
 
-                Tuple<int, int> possibleMoves = pawn.GetMovesFrom(2, 2);
+                var possibleMoves = pawn.GetMovesFrom(new BoardCoordinate(2, 2));
 
-                Assert.AreEqual(2, possibleMoves.Item1);
-                Assert.AreEqual(3, possibleMoves.Item2);
+                Assert.IsTrue(possibleMoves.Any(c => c.X == 2 && c.Y == 3));
             }
         }
     }

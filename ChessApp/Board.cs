@@ -2,16 +2,18 @@
 {
     public class Board
     {
-        private readonly Pawn[,] _pieces = new Pawn[8, 8];
+        private const int Boardsize = 8;
 
-        public void AddPiece(Pawn piece, int xCoordinate, int yCoordinate)
+        private readonly Pawn[,] _pieces = new Pawn[Boardsize, Boardsize];
+
+        public void AddPiece(Pawn piece, BoardCoordinate moveCoordinate)
         {
-            _pieces[xCoordinate, yCoordinate] = piece;
+            _pieces[moveCoordinate.X, moveCoordinate.Y] = piece;
         }
 
-        public Pawn GetPiece(int xCoordinate, int yCoordinate)
+        public Pawn GetPiece(BoardCoordinate coordinates)
         {
-            return _pieces[xCoordinate, yCoordinate];
+            return _pieces[coordinates.X, coordinates.Y];
         }
     }
 }

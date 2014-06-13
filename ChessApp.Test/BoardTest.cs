@@ -22,9 +22,9 @@ namespace ChessApp.Test
             [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
             public void Retrieves_Piece_Added_To_Location()
             {
-                Target.AddPiece(Piece, 1, 1);
+                Target.AddPiece(Piece, new BoardCoordinate(1, 1));
 
-                Assert.AreEqual(Piece, Target.GetPiece(1, 1));
+                Assert.AreEqual(Piece, Target.GetPiece(new BoardCoordinate(1, 1)));
             }
         }
 
@@ -34,7 +34,7 @@ namespace ChessApp.Test
             [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
             public void Does_Not_Throw_Exception_When_Adding_A_Piece_To_An_Unoccupied_Square()
             {
-                Target.AddPiece(new Pawn(), 2, 1);
+                Target.AddPiece(new Pawn(), new BoardCoordinate(2, 1));
             }
         }
     }

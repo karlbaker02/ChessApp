@@ -3,3 +3,4 @@ C:\Projects\ChessApp\ChessApp\bin\Debug\ChessApp.exe
 C:\Projects\ChessApp\ChessApp\bin\Debug\ChessApp.pdb
 C:\Projects\ChessApp\ChessApp\obj\Debug\ChessApp.exe
 C:\Projects\ChessApp\ChessApp\obj\Debug\ChessApp.pdb
+C:\Projects\ChessApp\ChessApp\obj\Debug\ChessApp.csprojResolveAssemblyReference.cache

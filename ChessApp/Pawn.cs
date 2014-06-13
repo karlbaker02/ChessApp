@@ -1,12 +1,12 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
 namespace ChessApp
 {
     public class Pawn
     {
-        public Tuple<int, int> GetMovesFrom(int xCoordinate, int yCoordinate)
+        public IEnumerable<BoardCoordinate> GetMovesFrom(BoardCoordinate moveCoordinate)
         {
-            return new Tuple<int, int>(xCoordinate, yCoordinate + 1);
+            yield return new BoardCoordinate(moveCoordinate.X, moveCoordinate.Y + 1);
         }
     }
 }
