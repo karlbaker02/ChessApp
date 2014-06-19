@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 
 namespace ChessApp
 {
@@ -7,9 +6,9 @@ namespace ChessApp
     {
         private const int Boardsize = 8;
 
-        private readonly Pawn[,] _pieces = new Pawn[Boardsize, Boardsize];
+        private readonly Piece[,] _pieces = new Piece[Boardsize, Boardsize];
 
-        public void AddPiece(Pawn piece, BoardCoordinate moveCoordinate)
+        public void AddPiece(Piece piece, BoardCoordinate moveCoordinate)
         {
             if (!moveCoordinate.IsCoordinateValidForBoardSize(Boardsize))
                 throw new ArgumentException("moveTarget");
@@ -17,11 +16,9 @@ namespace ChessApp
             _pieces[moveCoordinate.X, moveCoordinate.Y] = piece;
         }
 
-        public Pawn GetPiece(BoardCoordinate coordinates)
+        public Piece GetPiece(BoardCoordinate coordinates)
         {
             return _pieces[coordinates.X, coordinates.Y];
         }
-
-
     }
 }

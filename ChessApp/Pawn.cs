@@ -2,11 +2,16 @@
 
 namespace ChessApp
 {
-    public class Pawn
+    public class Pawn : Piece
     {
-        public IEnumerable<BoardCoordinate> GetMovesFrom(BoardCoordinate moveCoordinate)
+        public bool HasMoved { get; set; }
+
+        public override IEnumerable<BoardCoordinate> GetMovesFrom(BoardCoordinate moveCoordinate)
         {
             yield return new BoardCoordinate(moveCoordinate.X, moveCoordinate.Y + 1);
+
+            if (!HasMoved)
+                yield return new BoardCoordinate(moveCoordinate.X, moveCoordinate.Y + 2);
         }
     }
 }

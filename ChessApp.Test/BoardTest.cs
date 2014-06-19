@@ -69,6 +69,14 @@ namespace ChessApp.Test
 
                 ExtendedAssert.Throws<ArgumentException>(() => Target.AddPiece(Piece, coordinate));
             }
+
+            [TestMethod, Owner("ebd"), TestCategory("Proven"), TestCategory("Unit")]
+            public void Accepts_Rook_As_Argument_For_Piece()
+            {
+                var coordinate = new BoardCoordinate(1, 2);
+
+                Target.AddPiece(new Rook(), coordinate);
+            }
         }
     }
 }
