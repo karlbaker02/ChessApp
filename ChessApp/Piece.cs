@@ -4,6 +4,6 @@ namespace ChessApp
 {
     public abstract class Piece
     {
-        public abstract IEnumerable<BoardCoordinate> GetMovesFrom(BoardCoordinate moveCoordinate);
+        public abstract IEnumerable<BoardCoordinate> GetMovesFrom(BoardCoordinate moveCoordinate, int boardSize);
     }
 }
